@@ -32,4 +32,21 @@ A savoir dans le layout fichier application.html.erb remplacer application par d
   <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
 
-Autre 
+Autre ajout:
+gem 'tzinfo-data' trouvez sur https://github.com/tzinfo/tzinfo/wiki/Resolving-TZInfo::DataSourceNotFound-Errors
+l'ajouter dans le Gemfile.
+Faire un bundle update.
+
+Si vous avez oubliez de faire rake db:migrate vous aurez sans doute une erreur Migrations are pending. To resolve this issue, run:
+
+ bin/rake db:migrate RAILS_ENV=development
+faites ceci dans la console : 
+rake db:migrate RAILS_ENV=development
+ vous obtenez :
+$ rake db:migrate RAILS_ENV=development
+== 20150808125410 TableBooks: migrating =======================================
+-- create_table(:books)
+ -> 0.0000s
+-- add_column(:books, :title, :string)
+ -> 0.0000s
+== 20150808125410 TableBooks: migrated (0.0000s) 
